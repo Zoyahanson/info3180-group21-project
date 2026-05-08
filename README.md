@@ -401,9 +401,10 @@ GET /api/search?location=Kingston&min_age=20&max_age=30
 ## Known Issues / Limitations
 
 - Profile photo uploads are stored locally and may not persist on Render's free tier without cloud storage.
-- Real-time messaging uses 5-second polling; WebSocket support is not yet integrated.
-- Password reset functionality is not yet implemented.
-- Search filters on the dashboard are client-side only; the backend search endpoint handles location and age range.
+- Real-time messaging is not implemented; messages are refreshed through manual API fetching as  WebSocket support is not yet integrated.
+- Password reset and email verification functionalities are not yet implemented.
+- Dashboard filtering is primarily handled client-side using Vue computed properties, while backend endpoints provide the initial match data.
+- Attempts to deploy the frontend and backend using Vercel and Render resulted in build configuration issues, incorrect root directory detection, and dependency conflicts between the Flask backend and Vue frontend.
 
 ---
 
@@ -412,4 +413,4 @@ GET /api/search?location=Kingston&min_age=20&max_age=30
 - Never commit your `.env` file — it is included in `.gitignore`
 - Passwords are hashed using werkzeug.security (bcrypt-compatible)
 - CORS is enabled for `http://localhost:5173`
-- Optional features implemented: Dark Mode, Save Favorites
+- Additional features implemented: Dark Mode, Save Favorites and Block/Restrict Users(dislike). 
