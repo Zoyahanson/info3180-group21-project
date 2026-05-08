@@ -1,0 +1,365 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+:root {
+  --primary-color: #ff4d6d;
+  --secondary-color: #ff85a1;
+  --background-color: #fff0f3;
+  --card-color: #ffffff;
+  --text-color: #2b2d42;
+  --light-text: #6c757d;
+}
+
+/* =========================
+   Body
+========================= */
+
+body {
+  background: var(--background-color) !important;
+  color: var(--text-color);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* =========================
+   Login/Register Pages
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 620px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #2b2d42 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+  background: linear-gradient(90deg, #ff4d6d, #ff85a1) !important;
+  padding: 15px 30px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+  color: white !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.85) !important;
+  margin-left: 15px;
+  font-size: 17px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: white !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: white;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.navbar .btn-outline-light {
+  border-radius: 12px;
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+}
+
+.navbar .btn-outline-light:hover {
+  background: white;
+  color: #ff4d6d;
+}
+
+/* =========================
+   Cards
+========================= */
+
+.card {
+  border: none;
+  border-radius: 24px;
+  background: var(--card-color) !important;
+  box-shadow: 0 10px 30px rgba(255, 77, 109, 0.15);
+}
+
+/* =========================
+   Forms
+========================= */
+
+.form-control,
+.form-select {
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid #ffd6de;
+  padding: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 77, 109, 0.15) !important;
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn {
+  border-radius: 14px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #ff4d6d, #ff85a1) !important;
+  border: none !important;
+  height: 50px;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+/* =========================
+   Titles
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  color: var(--primary-color) !important;
+}
+
+/* =========================
+   Match Cards
+========================= */
+
+.match-card {
+  border-radius: 24px;
+  transition: 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffd6de;
+}
+
+.match-name {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.match-bio {
+  color: var(--light-text);
+  font-size: 18px;
+}
+
+/* =========================
+   Empty States
+========================= */
+
+.empty-state {
+  background: white;
+  border-radius: 24px;
+  padding: 50px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.08);
+  color: var(--primary-color);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* =========================
+   Messages
+========================= */
+
+.message-bubble {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 20px;
+  max-width: 70%;
+}
+
+.message-left {
+  background: #ffe5ec;
+  color: var(--text-color);
+}
+
+.message-right {
+  background: linear-gradient(90deg, #ff4d6d, #ff85a1);
+  color: white;
+}
+
+/* =========================
+   Links
+========================= */
+
+a {
+  color: #ff4d6d;
+}
+
+a:hover {
+  color: #ff85a1;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+/* =========================
+   Dark Mode
+   Applied when <body class="dark-mode">
+========================= */
+
+body.dark-mode {
+  --background-color: #1e1e1e;
+  --card-color: #2c2c2c;
+  --text-color: #f0f0f0;
+  --light-text: #cccccc;
+  background: #1e1e1e !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .empty-state {
+  background: #2c2c2c !important;
+  color: #f0f0f0 !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select,
+body.dark-mode textarea {
+  background: #3a3a3a !important;
+  color: #f0f0f0 !important;
+  border: 1px solid #555 !important;
+}
+
+body.dark-mode .form-control::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa !important;
+}
+
+body.dark-mode .text-muted {
+  color: #aaa !important;
+}
+
+body.dark-mode footer {
+  color: #aaa;
+}
+
+body.dark-mode .message-left {
+  background: #3a3a3a;
+  color: #f0f0f0;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5 {
+  color: #ff85a1 !important;
+}
+
+body.dark-mode .messages-container {
+  background: #2c2c2c !important;
+}
+
+body.dark-mode .badge.bg-light {
+  background: #555 !important;
+  color: #f0f0f0 !important;
+  border-color: #666 !important;
+}
+
+body.dark-mode input:-webkit-autofill,
+body.dark-mode input:-webkit-autofill:hover,
+body.dark-mode input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #3a3a3a inset !important;
+  -webkit-text-fill-color: #f0f0f0 !important;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 768px) {
+
+  .navbar-brand {
+    font-size: 24px;
+  }
+
+  .match-name {
+    font-size: 24px;
+  }
+
+  .profile-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .message-bubble {
+    max-width: 90%;
+  }
+
+  .empty-state {
+    font-size: 24px;
+    padding: 35px;
+  }
+}
