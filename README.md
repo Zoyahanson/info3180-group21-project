@@ -352,89 +352,9 @@ GET /api/search?location=Kingston&min_age=20&max_age=30
 
 ## ER Diagram
 
-```mermaid
-erDiagram
-    users {
-        int id PK
-        string email
-        string username
-        string password_hash
-        bool is_active
-        datetime created_at
-    }
-    profiles {
-        int id PK
-        int user_id FK
-        string name
-        int age
-        text bio
-        string profile_picture
-        string location
-        float latitude
-        float longitude
-        string gender
-        string looking_for
-        string relationship_type
-        int min_age_pref
-        int max_age_pref
-        int max_distance_km
-        string visibility
-        datetime updated_at
-    }
-    interests {
-        int id PK
-        string name
-    }
-    profile_interests {
-        int profile_id FK
-        int interest_id FK
-    }
-    swipes {
-        int id PK
-        int swiper_id FK
-        int swiped_id FK
-        string action
-        datetime created_at
-    }
-    matches {
-        int id PK
-        int user1_id FK
-        int user2_id FK
-        string status
-        datetime created_at
-    }
-    messages {
-        int id PK
-        int match_id FK
-        int sender_id FK
-        int receiver_id FK
-        text content
-        bool is_read
-        datetime timestamp
-    }
-    favorites {
-        int id PK
-        int user_id FK
-        int favorited_user_id FK
-        datetime created_at
-    }
-    blocked_users {
-        int id PK
-        int blocker_id FK
-        int blocked_id FK
-        datetime created_at
-    }
+<img width="1536" height="1024" alt="DRIFTDATER_ERD (2)" src="https://github.com/user-attachments/assets/f1652f56-13de-4951-b481-8de3889d649b" />
 
-    users ||--o| profiles : "has one"
-    profiles }o--o{ interests : "profile_interests"
-    users ||--o{ swipes : "swiper"
-    users ||--o{ matches : "user1 or user2"
-    matches ||--o{ messages : "has many"
-    users ||--o{ favorites : "saves"
-    users ||--o{ blocked_users : "blocks"
-```
 
----
 
 ## User Manual
 
